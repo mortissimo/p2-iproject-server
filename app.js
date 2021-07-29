@@ -21,13 +21,13 @@ let youtubeLink = '';
 io.on('connection', (socket) =>{
     console.log('user connected');
     socket.on("sendMessages", (data) =>{
-        console.log(data, 'ini keterima di server')
+        // console.log(data, 'ini keterima di server')
         io.emit('broadcastMessage', data);
     })
     socket.on('join',(user) =>{
         // const dataUser =     
         users[socket.id] = user
-        console.log(users);
+        // console.log(users);
         // socket.emit('getRooms', rooms)
         socket.on('disconnect', () => {
             delete users[socket.id]
@@ -39,7 +39,7 @@ io.on('connection', (socket) =>{
     })
     socket.on('changeUrl', (url) =>{
         youtubeLink = url;
-        console.log(youtubeLink);
+        // console.log(youtubeLink);
         io.emit('videoUrl', url);
     })
     socket.on('getUser', () =>{

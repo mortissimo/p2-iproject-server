@@ -10,18 +10,16 @@ let transporter = nodemailer.createTransport({
 class Controller{
     static saveToEmail(req, res, next) {
         const {email} = req.query
-        console.log("MASUK DLU", req.body.messages, email);
+        // console.log("MASUK DLU", req.body.messages, email);
         let messages = req.body.messages.map(data =>{
             return `<p><b>${data.name}</b> ${data.time}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${data.message}</p> `
         })
-        console.log(messages.join(''));
+        // console.log(messages.join(''));
         let mailOptions = {
             from : 'agencyoftalents999@gmail.com',
             to: `${email}`,
-            subject: 'INVITATION',
-            html: `Chat Log :
-            ${messages}
-            `
+            subject: 'CHAT LOG',
+            html: `${messages.join('')}`
         }
         transporter.sendMail(mailOptions, function(err, data){
             if (err){
