@@ -7,12 +7,14 @@ const io = require('socket.io')(httpServer);
 const cors = require('cors');
 const Controller = require('./controllers/controller');
 const  errorHandler  = require('./middlewares/errorHandlers')
-
+const YoutubeController = require('./controllers/youtube_Controller');
 
 app.use(cors());
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
+app.get('/getPopularVideos', YoutubeController.fetchPopularVideos);
+app.get('/search', YoutubeController.fetchSearchedMovie);
 app.post('/emailLog', Controller.saveToEmail)
 app.use(errorHandler);
 // let rooms = [];
