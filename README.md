@@ -33,7 +33,7 @@ case 200
         "publishTime": "2021-07-29T11:43:14Z"
     },
 
-/getPopularVideos => Mengambil data dari youtube REST API (video2 terpopuler di youtube) ke arah `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&key=AIzaSyCuhb2VhU_LHs5z5dSrWoNJiBHPg0jWMM8&maxResults=9` yang merupakan
+/getPopularVideos => Mengambil data dari youtube REST API (video2 terpopuler di youtube) ke arah `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&key=AIzaSyCuhb2VhU_LHs5z5dSrWoNJiBHPg0jWMM8&maxResults=9` yang kemudian dimapping pada controller sehingga dapat di commit dengan mudah di client
 
 Contoh:
 part: snippet
