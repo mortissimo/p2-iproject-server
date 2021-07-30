@@ -23,7 +23,7 @@ class YoutubeController {
         console.log("HALO")
         axios({
             method: "GET",
-            url : `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&key=AIzaSyCuhb2VhU_LHs5z5dSrWoNJiBHPg0jWMM8&maxResults=9`   
+            url : `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&key=AIzaSyCuhb2VhU_LHs5z5dSrWoNJiBHPg0jWMM8&maxResults=18`   
         })
         .then(({data}) =>{
             // const payload = data.items.map(data =>{
