@@ -30,7 +30,7 @@ class YoutubeController {
             //     return {videoId:data.id.videoId, title:data.snippet.title, channelTitle:data.snippet.channelTitle, url: data.snippet.thumbnails.default.url, description: data.snippet.description, publishTime: data.snippet.publishTime};  
             // })
             const payload = data.items.map(data =>{
-                return {videoId:data.id, title:data.snippet.title, channelTitle:data.snippet.channelTitle, url: data.snippet.thumbnails.default.url, description: data.snippet.description, publishTime: data.snippet.publishTime}
+                return {videoId:data.id, title:data.snippet.title, channelTitle:data.snippet.channelTitle, url: data.snippet.thumbnails.medium.url, description: data.snippet.description, publishTime: data.snippet.publishTime}
             })
             res.status(200).json(payload);
         })
